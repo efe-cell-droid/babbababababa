@@ -1,0 +1,261 @@
+/* ==========================================================================
+   DEVILMC NETWORK - Ana Stil Dosyası (Kırmızı & Şeytani Koyu Tema)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+:root {
+  /* Kırmızı & Ateş Teması */
+  --primary: #ff2a4b;
+  --primary-hover: #e01b3a;
+  --primary-glow: rgba(255, 42, 75, 0.4);
+  --primary-text: #ffffff;
+  
+  /* Şeytani Koyu Zeminler (Deep Devil Dark) */
+  --body-bg: #131012;
+  --dark-bg: #0c090b;
+  --main-bg-2: #1c1619;
+  --card-bg: #231c20;
+  --card-hover: #2d2429;
+  --border-color: #3b2d34;
+  --border-light: rgba(255, 42, 75, 0.12);
+
+  --text-main: #f5f0f2;
+  --text-muted: #a89aa0;
+  --text-dim: #73646a;
+
+  --accent-gold: #ffb703;
+  --accent-green: #2ecc71;
+  --accent-red: #ff2a4b;
+  --accent-orange: #fb5607;
+  --accent-purple: #8338ec;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+
+  --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.65);
+  --shadow-glow: 0 0 25px var(--primary-glow);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--body-bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-hover);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+/* --------------------------------------------------------------------------
+   Düzen ve Konteyner
+   -------------------------------------------------------------------------- */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.page-wrapper {
+  padding: 40px 0 80px;
+  min-height: calc(100vh - 480px);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -12px;
+}
+
+.col-12 { width: 100%; padding: 0 12px; }
+.col-8  { width: 66.666%; padding: 0 12px; }
+.col-4  { width: 33.333%; padding: 0 12px; }
+.col-6  { width: 50%; padding: 0 12px; }
+.col-3  { width: 25%; padding: 0 12px; }
+
+@media (max-width: 992px) {
+  .col-8, .col-4 { width: 100%; }
+}
+
+@media (max-width: 768px) {
+  .col-6, .col-3 { width: 100%; }
+}
+
+/* --------------------------------------------------------------------------
+   Tipografi ve Başlıklar
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+  color: #fff;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-title i {
+  color: var(--primary);
+  filter: drop-shadow(0 0 8px var(--primary-glow));
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary) 0%, transparent 100%);
+  margin-left: 12px;
+  opacity: 0.4;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-primary { background: linear-gradient(135deg, var(--primary), #b3001e); color: #fff; box-shadow: 0 2px 8px var(--primary-glow); }
+.badge-gold    { background: var(--accent-gold); color: #000; }
+.badge-green   { background: var(--accent-green); color: #fff; }
+.badge-purple  { background: var(--accent-purple); color: #fff; }
+.badge-muted   { background: var(--card-hover); color: var(--text-muted); border: 1px solid var(--border-color); }
+
+/* --------------------------------------------------------------------------
+   Breadcrumb
+   -------------------------------------------------------------------------- */
+.breadcrumb-wrap {
+  margin-bottom: 25px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  background: var(--main-bg-2);
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+}
+
+.breadcrumb a:hover {
+  color: var(--primary);
+}
+
+.breadcrumb span.sep {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+}
+
+.breadcrumb span.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   Butonlar
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  text-align: center;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, #b3001e 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px var(--primary-glow);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #ff4764 0%, var(--primary) 100%);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 42, 75, 0.55);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+}
+
+.btn-outline:hover {
+  background: var(--card-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-sm {
+  padding: 6px 14px;
+  font-size: 0.82rem;
+}
+
+.btn-lg {
+  padding: 14px 28px;
+  font-size: 1.05rem;
+}
+
+.btn-block {
+  width: 100%;
+}
