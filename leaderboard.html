@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sıralama - DEVILMC NETWORK</title>
+  <meta name="description" content="DevilMC Network oyuncu sıralaması. En çok öldürenler, en zenginler ve cehennem liderleri tablosu.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+  <style>
+    .rank-medal {
+      font-size: 1.2rem;
+      font-weight: 800;
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .rank-1 { color: #ff2a4b; background: rgba(255, 42, 75, 0.2); border: 1px solid #ff2a4b; box-shadow: 0 0 10px rgba(255, 42, 75, 0.5); }
+    .rank-2 { color: #ff8597; background: rgba(255, 133, 151, 0.15); border: 1px solid #ff8597; }
+    .rank-3 { color: #cd7f32; background: rgba(205, 127, 50, 0.15); border: 1px solid #cd7f32; }
+    .rank-other { color: var(--text-dim); font-size: 0.95rem; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header-banner">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-brand">
+          <i class="fa-solid fa-fire" style="color: var(--primary);"></i> DEVIL<span>MC</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="navbar-nav" id="navbar-menu">
+          <li class="nav-item"><a href="index.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a></li>
+          <li class="nav-item"><a href="store.html"><i class="fa-solid fa-cart-shopping"></i> Mağaza</a></li>
+          <li class="nav-item"><a href="credits.html"><i class="fa-solid fa-coins"></i> Kredi Yatır</a></li>
+          <li class="nav-item active"><a href="leaderboard.html"><i class="fa-solid fa-trophy"></i> Sıralama</a></li>
+          <li class="nav-item"><a href="apply.html"><i class="fa-solid fa-user-plus"></i> Yetkili Başvuru</a></li>
+          <li class="nav-item"><a href="rules.html"><i class="fa-solid fa-shield-halved"></i> Kurallar</a></li>
+        </ul>
+
+        <div class="navbar-actions">
+          <a href="https://discord.gg/devilmc" target="_blank" class="btn btn-outline btn-sm">
+            <i class="fa-brands fa-discord"></i> Discord
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SubNav -->
+    <div class="header-subNav">
+      <div class="block--ip" id="copy-ip-btn">
+        <div class="pulse-dot"></div>
+        <span class="ip-text">play.devilmc.com.tr</span>
+        <div class="online-badge"><span id="server-online-count">Yükleniyor...</span> oyuncu aktif</div>
+        <i class="fa-regular fa-clone copy-icon"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- İÇERİK -->
+  <main class="page-wrapper">
+    <div class="container">
+      
+      <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+          <a href="index.html">Anasayfa</a>
+          <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span class="active">Liderlik Tablosu</span>
+        </div>
+      </div>
+
+      <div class="store-filter-tabs">
+        <button class="tab-btn active" id="btn-tab-kills"><i class="fa-solid fa-skull"></i> BoxPvP Öldürme Liderleri</button>
+        <button class="tab-btn" id="btn-tab-money"><i class="fa-solid fa-sack-dollar"></i> En Zenginler</button>
+        <button class="tab-btn" id="btn-tab-donors"><i class="fa-solid fa-crown"></i> Kredi Liderleri</button>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 id="table-title"><i class="fa-solid fa-fire" style="color: var(--primary);"></i> Inferno BoxPvP Öldürme Sıralaması</h3>
+          <span class="badge badge-primary">Sezon 1</span>
+        </div>
+        <div class="table-responsive">
+          <table class="table" id="leaderboard-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;" class="text-center">Sıra</th>
+                <th>Oyuncu Adı</th>
+                <th class="text-center">Rütbe</th>
+                <th class="text-end" id="col-metric-name">Öldürme</th>
+              </tr>
+            </thead>
+            <tbody id="leaderboard-body">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div class="footer-line-accent"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>DevilMC Network</strong>. Tüm hakları saklıdır.</div>
+        <div>Sunucu IP: <code style="color: var(--primary);">play.devilmc.com.tr</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    const dataKills = [
+      { rank: 1, nick: 'InfernoKing', badge: 'INFERNO', metric: '6,210 Öldürme', medal: 'rank-1', icon: 'fa-trophy' },
+      { rank: 2, nick: 'DevilSlayer', badge: 'DEVIL-VIP+', metric: '5,140 Öldürme', medal: 'rank-2', icon: 'fa-medal' },
+      { rank: 3, nick: 'BloodReaper', badge: 'DEVIL-VIP', metric: '4,890 Öldürme', medal: 'rank-3', icon: 'fa-medal' },
+      { rank: 4, nick: 'ShadowHunter', badge: 'Oyuncu', metric: '3,410 Öldürme', medal: 'rank-other', icon: '' },
+      { rank: 5, nick: 'RedDemon', badge: 'DEVIL-VIP', metric: '3,110 Öldürme', medal: 'rank-other', icon: '' },
+      { rank: 6, nick: 'FireBringer', badge: 'DEVIL-VIP+', metric: '2,900 Öldürme', medal: 'rank-other', icon: '' },
+      { rank: 7, nick: 'ViperX', badge: 'Oyuncu', metric: '2,150 Öldürme', medal: 'rank-other', icon: '' },
+    ];
+
+    const dataMoney = [
+      { rank: 1, nick: 'DevilSlayer', badge: 'INFERNO', metric: '240,000,000 $', medal: 'rank-1', icon: 'fa-trophy' },
+      { rank: 2, nick: 'InfernoKing', badge: 'INFERNO', metric: '195,500,000 $', medal: 'rank-2', icon: 'fa-medal' },
+      { rank: 3, nick: 'BloodReaper', badge: 'DEVIL-VIP+', metric: '140,000,000 $', medal: 'rank-3', icon: 'fa-medal' },
+      { rank: 4, nick: 'RedDemon', badge: 'DEVIL-VIP+', metric: '98,000,000 $', medal: 'rank-other', icon: '' },
+      { rank: 5, nick: 'FireBringer', badge: 'Oyuncu', metric: '82,000,000 $', medal: 'rank-other', icon: '' }
+    ];
+
+    const dataDonors = [
+      { rank: 1, nick: 'InfernoKing', badge: 'INFERNO', metric: '850 ₺', medal: 'rank-1', icon: 'fa-crown' },
+      { rank: 2, nick: 'DevilSlayer', badge: 'DEVIL-VIP+', metric: '750 ₺', medal: 'rank-2', icon: 'fa-crown' },
+      { rank: 3, nick: 'BloodReaper', badge: 'DEVIL-VIP', metric: '650 ₺', medal: 'rank-3', icon: 'fa-crown' },
+      { rank: 4, nick: 'ShadowHunter', badge: 'Oyuncu', metric: '500 ₺', medal: 'rank-other', icon: '' },
+      { rank: 5, nick: 'RedDemon', badge: 'DEVIL-VIP', metric: '250 ₺', medal: 'rank-other', icon: '' }
+    ];
+
+    function renderLeaderboard(data, metricTitle) {
+      const tbody = document.getElementById('leaderboard-body');
+      document.getElementById('col-metric-name').textContent = metricTitle;
+      tbody.innerHTML = '';
+
+      data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td class="text-center">
+            <span class="rank-medal ${item.medal}">
+              ${item.icon ? `<i class="fa-solid ${item.icon}"></i>` : item.rank}
+            </span>
+          </td>
+          <td>
+            <div class="player-cell">
+              <img class="player-avatar-sm" src="https://minotar.net/helm/${item.nick}/32.png" alt="${item.nick}" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+              <span class="player-name">${item.nick}</span>
+            </div>
+          </td>
+          <td class="text-center">
+            <span class="badge ${item.badge === 'INFERNO' ? 'badge-primary' : item.badge.includes('DEVIL') ? 'badge-primary' : 'badge-muted'}">
+              ${item.badge}
+            </span>
+          </td>
+          <td class="text-end">
+            <strong style="color: var(--primary); font-size: 0.95rem;">${item.metric}</strong>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderLeaderboard(dataKills, 'Öldürme');
+
+      const btnKills = document.getElementById('btn-tab-kills');
+      const btnMoney = document.getElementById('btn-tab-money');
+      const btnDonors = document.getElementById('btn-tab-donors');
+
+      const tabs = [btnKills, btnMoney, btnDonors];
+
+      function setActive(target) {
+        tabs.forEach(b => b.classList.remove('active'));
+        target.classList.add('active');
+      }
+
+      btnKills.addEventListener('click', () => {
+        setActive(btnKills);
+        document.getElementById('table-title').innerHTML = '<i class="fa-solid fa-fire" style="color: var(--primary);"></i> Inferno BoxPvP Öldürme Sıralaması';
+        renderLeaderboard(dataKills, 'Öldürme');
+      });
+
+      btnMoney.addEventListener('click', () => {
+        setActive(btnMoney);
+        document.getElementById('table-title').innerHTML = '<i class="fa-solid fa-sack-dollar" style="color: var(--primary);"></i> En Zengin Oyuncular Sıralaması';
+        renderLeaderboard(dataMoney, 'Bakiye');
+      });
+
+      btnDonors.addEventListener('click', () => {
+        setActive(btnDonors);
+        document.getElementById('table-title').innerHTML = '<i class="fa-solid fa-crown" style="color: var(--primary);"></i> En Çok Kredi Yükleyenler';
+        renderLeaderboard(dataDonors, 'Yüklenen Tutar');
+      });
+    });
+  </script>
+</body>
+</html>

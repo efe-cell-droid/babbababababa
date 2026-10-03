@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyuncu Profili | DevilMC Network</title>
+    <link rel="icon" type="image/png" href="https://i.imgur.com/AfFp7pu.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --primary: #e63946;
+            --primary-hover: #d62828;
+            --bg-glass: rgba(18, 20, 26, 0.88);
+            --border: rgba(255, 255, 255, 0.08);
+            --text-light: #f8f9fa;
+            --text-muted: #a9aeb7;
+            --radius-lg: 16px;
+            --radius-md: 12px;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+        body {
+            background: #0b0c10 radial-gradient(circle at 50% 20%, rgba(230, 57, 70, 0.2), transparent 70%);
+            color: var(--text-light);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .profile-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 100%;
+            backdrop-filter: blur(14px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+        .avatar-full-box {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 16px;
+            background: rgba(0,0,0,0.5);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(230, 57, 70, 0.4);
+        }
+        .avatar-full-box img {
+            width: 80px;
+            height: 80px;
+            image-rendering: pixelated;
+        }
+        h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 6px; }
+        .rank-badge {
+            display: inline-block;
+            background: rgba(230, 57, 70, 0.2);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 24px;
+            text-align: left;
+        }
+        .stat-item {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border);
+            padding: 14px;
+            border-radius: 10px;
+        }
+        .stat-label { font-size: 0.78rem; color: var(--text-muted); text-transform: uppercase; }
+        .stat-value { font-size: 1.25rem; font-weight: 800; color: #fff; margin-top: 4px; }
+        .action-btns { display: flex; gap: 10px; }
+        .btn {
+            flex: 1;
+            padding: 12px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.92rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: 0.3s;
+        }
+        .btn-home { background: var(--primary); color: #fff; border: none; }
+        .btn-home:hover { background: var(--primary-hover); }
+        .btn-logout { background: transparent; border: 1px solid rgba(255,255,255,0.15); color: var(--text-muted); }
+        .btn-logout:hover { background: rgba(255,255,255,0.05); color: #fff; border-color: var(--primary); }
+    </style>
+</head>
+<body>
+    <div class="profile-card">
+        <div class="avatar-full-box">
+            <img id="profAvatar" src="https://minotar.net/helm/Steve/100.png" alt="Skin">
+        </div>
+        <h2 id="profUsername">Steve</h2>
+        <div class="rank-badge" id="profRank">DEVIL-VIP+</div>
+
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-label">Bakiye</div>
+                <div class="stat-value" id="profCredits" style="color: #f4c430;">250 ₺</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Sunucu Durumu</div>
+                <div class="stat-value" style="color: #2ecc71; font-size: 1rem;"><i class="fa-solid fa-circle" style="font-size: 0.7rem;"></i> Çevrimiçi</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">BoxMining Seviyesi</div>
+                <div class="stat-value">Seviye 42</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">Kasa Anahtarları</div>
+                <div class="stat-value">7 Adet</div>
+            </div>
+        </div>
+
+        <div class="action-btns">
+            <a href="index.html" class="btn btn-home"><i class="fa-solid fa-house"></i> Ana Sayfa</a>
+            <button class="btn btn-logout" onclick="logout()"><i class="fa-solid fa-right-from-bracket"></i> Çıkış Yap</button>
+        </div>
+    </div>
+
+    <script>
+        const saved = localStorage.getItem('devilmc_user');
+        if (saved) {
+            try {
+                const u = JSON.parse(saved);
+                document.getElementById('profUsername').textContent = u.username;
+                document.getElementById('profAvatar').src = 'https://minotar.net/helm/' + encodeURIComponent(u.username) + '/100.png';
+                if (u.credits !== undefined) document.getElementById('profCredits').textContent = u.credits + ' ₺';
+                if (u.rank) document.getElementById('profRank').textContent = u.rank;
+            } catch(e) {}
+        } else {
+            // Oturum yoksa logine yönlendir
+            window.location.href = 'login.html';
+        }
+
+        function logout() {
+            localStorage.removeItem('devilmc_user');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

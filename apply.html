@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yetkili Başvuru - DEVILMC NETWORK</title>
+  <meta name="description" content="DevilMC Network yetkili başvuru formu. Rehber, Moderatör ve Mimar kadromuza katılmak için hemen başvurun.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header-banner">
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-brand">
+          <i class="fa-solid fa-fire" style="color: var(--primary);"></i> DEVIL<span>MC</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="navbar-nav" id="navbar-menu">
+          <li class="nav-item"><a href="index.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a></li>
+          <li class="nav-item"><a href="store.html"><i class="fa-solid fa-cart-shopping"></i> Mağaza</a></li>
+          <li class="nav-item"><a href="credits.html"><i class="fa-solid fa-coins"></i> Kredi Yatır</a></li>
+          <li class="nav-item"><a href="leaderboard.html"><i class="fa-solid fa-trophy"></i> Sıralama</a></li>
+          <li class="nav-item active"><a href="apply.html"><i class="fa-solid fa-user-plus"></i> Yetkili Başvuru</a></li>
+          <li class="nav-item"><a href="rules.html"><i class="fa-solid fa-shield-halved"></i> Kurallar</a></li>
+        </ul>
+
+        <div class="navbar-actions">
+          <a href="https://formspree.io/f/mzebvnbl">
+            <i class="fa-brands fa-discord"></i> Discord
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SubNav -->
+    <div class="header-subNav">
+      <div class="block--ip" id="copy-ip-btn">
+        <div class="pulse-dot"></div>
+        <span class="ip-text">play.devilmc.com.tr</span>
+        <div class="online-badge"><span id="server-online-count">Yükleniyor...</span> oyuncu aktif</div>
+        <i class="fa-regular fa-clone copy-icon"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- İÇERİK -->
+  <main class="page-wrapper">
+    <div class="container">
+
+      <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+          <a href="index.html">Anasayfa</a>
+          <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span class="active">Yetkili Başvuru Formu</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-8">
+          <div class="card">
+            <div class="card-header">
+              <h3><i class="fa-solid fa-file-signature" style="color: var(--primary);"></i> DevilMC Başvuru Bilgileri</h3>
+              <span class="badge badge-primary">Ekibimize Başvur</span>
+            </div>
+            <div class="card-body">
+              <form id="apply-form">
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="form-label" for="applicant-name">Adınız Soyadınız</label>
+                      <input type="text" id="applicant-name" name="name" class="form-control" placeholder="Ad Soyad" required>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="form-label" for="applicant-age">Yaşınız</label>
+                      <input type="number" id="applicant-age" name="age" class="form-control" placeholder="Örn: 17" min="14" max="40" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="form-label" for="applicant-mc-nick">Minecraft Kullanıcı Adınız</label>
+                      <input type="text" id="applicant-mc-nick" name="nick" class="form-control" placeholder="Oyundaki nickiniz" required>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="form-label" for="applicant-discord">Discord Kullanıcı Adınız</label>
+                      <input type="text" id="applicant-discord" name="discord" class="form-control" placeholder="Örn: devil_user" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="form-label" for="applicant-role">Başvurmak İstediğiniz Pozisyon</label>
+                      <select id="applicant-role" name="role" class="form-control" required>
+                        <option value="Rehber">Rehber (Oyunculara Yardım ve Sohbet Düzeni)</option>
+                        <option value="AAC / Moderatör">AAC / Moderatör (Hile Tespiti &amp; Düzen Koruma)</option>
+                        <option value="Mimar / Builder">Mimar / Builder (Harita &amp; Yapı Tasarımı)</option>
+                        <option value="Geliştirici">Geliştirici (Java / Spigot / Web)</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-group">
+                      <label class="form-label" for="applicant-hours">Günlük Aktiflik Süresi (Saat)</label>
+                      <input type="number" id="applicant-hours" name="hours" class="form-control" placeholder="Örn: 4" min="1" max="18" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="applicant-experience">Daha Önceki Yetkililik Deneyimleriniz</label>
+                  <textarea id="applicant-experience" name="experience" rows="3" class="form-control" placeholder="Daha önce hangi sunucularda görev aldınız?"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="applicant-reason">Neden DevilMC Ekibine Katılmak İstiyorsunuz?</label>
+                  <textarea id="applicant-reason" name="reason" rows="4" class="form-control" placeholder="Bize kendinizden ve ekibe katabileceğiniz katkılardan bahsedin..." required></textarea>
+                </div>
+
+                <div style="text-align: right; margin-top: 24px;">
+                  <button type="submit" class="btn btn-primary btn-lg" id="applySubmitBtn">
+                    <i class="fa-solid fa-paper-plane"></i> Başvuruyu Gönder
+                  </button>
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="sidebar-section">
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-list-check" style="color: var(--primary);"></i> Başvuru Şartları</h3>
+              </div>
+              <div class="card-body">
+                <ul style="display: flex; flex-direction: column; gap: 10px; color: var(--text-muted); font-size: 0.88rem;">
+                  <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> En az 15 yaşında olmak.</li>
+                  <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Mikrofon sahibi olmak ve Discord kullanabilmek.</li>
+                  <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Sunucu kurallarını eksiksiz bilmek.</li>
+                  <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Günde en az 3-4 saat aktif olabilmek.</li>
+                  <li><i class="fa-solid fa-check" style="color: var(--primary);"></i> Adil, saygılı ve sabırlı iletişim kurabilmek.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-clock" style="color: var(--primary);"></i> Değerlendirme Süreci</h3>
+              </div>
+              <div class="card-body">
+                <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.6;">
+                  Başvurunuz ekibimize iletilir ve <strong>24 - 48 saat</strong> içerisinde incelenir. Uygun görülen adaylar Discord üzerinden sesli mülakata çağrılır.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div class="footer-line-accent"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <div>&copy; 2026 <strong>DevilMC Network</strong>. Tüm hakları saklıdır.</div>
+        <div>Sunucu IP: <code style="color: var(--primary);">play.devilmc.com.tr</code></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const applyForm = document.getElementById('apply-form');
+      const submitBtn = document.getElementById('applySubmitBtn');
+
+      if (!applyForm) return;
+
+      applyForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nick = document.getElementById('applicant-mc-nick').value.trim();
+        const role = document.getElementById('applicant-role').value;
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Gönderiliyor...';
+
+        try {
+          const res = await fetch('https://formspree.io/f/mzebvnbl', {
+            method: 'POST',
+            body: new FormData(applyForm),
+            headers: { 'Accept': 'application/json' }
+          });
+
+          if (res.ok) {
+            window.showToast(
+              'Teşekkürler ' + nick + '! ' + role + ' başvurunuz alındı, 24-48 saat içinde değerlendireceğiz.',
+              'success'
+            );
+            applyForm.reset();
+          } else {
+            const data = await res.json().catch(() => ({}));
+            const msg = (data.errors || []).map(function(e) { return e.message; }).join(', ') || 'Bir hata oluştu.';
+            window.showToast('Gönderim başarısız: ' + msg, 'error');
+          }
+        } catch (err) {
+          window.showToast('Bağlantı hatası! Lütfen internet bağlantınızı kontrol edin.', 'error');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Başvuruyu Gönder';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

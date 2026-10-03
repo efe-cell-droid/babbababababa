@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEVILMC NETWORK - Cehennemin En Rekabetçi Sunucusu!</title>
+  <meta name="description" content="DevilMC Network (play.devilmc.com.tr) - Türkiye'nin en iyi BoxPvP, Inferno Mining ve SkyBlock Minecraft sunucusu.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       ÜST HEADER & BANNER
+       ======================================================================== -->
+  <header class="header-banner">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="container">
+        <a href="index.html" class="nav-brand">
+          <i class="fa-solid fa-fire" style="color: var(--primary);"></i> DEVIL<span>MC</span>
+        </a>
+
+        <button class="mobile-toggle" id="mobile-nav-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="navbar-nav" id="navbar-menu">
+          <li class="nav-item active"><a href="index.html"><i class="fa-solid fa-house"></i> Ana Sayfa</a></li>
+          <li class="nav-item"><a href="store.html"><i class="fa-solid fa-cart-shopping"></i> Mağaza</a></li>
+          <li class="nav-item"><a href="credits.html"><i class="fa-solid fa-coins"></i> Kredi Yatır</a></li>
+          <li class="nav-item"><a href="leaderboard.html"><i class="fa-solid fa-trophy"></i> Sıralama</a></li>
+          <li class="nav-item"><a href="apply.html"><i class="fa-solid fa-user-plus"></i> Yetkili Başvuru</a></li>
+          <li class="nav-item"><a href="rules.html"><i class="fa-solid fa-shield-halved"></i> Kurallar</a></li>
+        </ul>
+
+        <div class="navbar-actions">
+          <a href="https://discord.gg/devilbox" target="_blank" class="btn btn-outline btn-sm">
+            <i class="fa-brands fa-discord"></i> Discord
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SubNav: IP Kopyalama Barı -->
+    <div class="header-subNav">
+      <div class="block--ip" id="copy-ip-btn" title="Kopyalamak için tıkla">
+        <div class="pulse-dot"></div>
+        <span class="ip-text">play.devilmc.com.tr</span>
+        <div class="online-badge">
+          <span id="server-online-count">Yükleniyor...</span> oyuncu aktif
+        </div>
+        <i class="fa-regular fa-clone copy-icon"></i>
+      </div>
+    </div>
+
+    <!-- Header Banner Orta İçerik -->
+    <div class="header-banner-content">
+      <div class="container">
+        <div class="grid-header">
+          <!-- Sol: Kullanıcı Giriş Durumu -->
+          <div id="header-user-widget">
+            <div class="user-auth-widget">
+              <div class="skin-avatar-box">
+                <img src="https://minotar.net/helm/Steve/64.png" alt="Minecraft Skin" id="header-skin-img">
+              </div>
+              <div class="user-auth-info">
+                <h4>Giriş Yap</h4>
+                <p><a href="#" class="open-login-btn">Hesabına bağlan</a></p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orta: Sunucu Logosu -->
+          <div class="center-logo-box">
+            <div class="logo-fallback"><i class="fa-solid fa-fire"></i> DEVILMC</div>
+            <div class="logo-slogan">CEHENNEMİN EN İYİ SUNUCUSU!</div>
+          </div>
+
+          <!-- Sağ: Discord Katıl Butonu -->
+          <div class="discord-join-box">
+            <a href="https://discord.gg/devilbox" target="_blank" class="discord-btn">
+              <i class="fa-brands fa-discord"></i>
+              <div class="discord-texts">
+                <span class="d-title">DevilMC Discord</span>
+                <span class="d-sub">15.000+ Üyeye Katıl</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       ANA İÇERİK ALANI
+       ======================================================================== -->
+  <main class="page-wrapper">
+    <div class="container">
+      
+      <!-- Breadcrumb -->
+      <div class="breadcrumb-wrap">
+        <div class="breadcrumb">
+          <a href="index.html">Anasayfa</a>
+          <span class="sep"><i class="fa-solid fa-chevron-right"></i></span>
+          <span class="active">Haberler & Sunucu Bilgileri</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <!-- SOL KOLON (Haberler ve Oyun Modları) -->
+        <div class="col-8">
+          
+          <!-- Oyun Modları Bölümü -->
+          <h2 class="section-title">
+            <i class="fa-solid fa-gamepad"></i> Oyun Modlarımız
+          </h2>
+          <div class="gamemodes-grid">
+            <div class="mode-card">
+              <div class="mode-icon"><i class="fa-solid fa-fire-flame-curved"></i></div>
+              <h3>Inferno BoxPvP</h3>
+              <p>Özel alev kılıçları, cehennem zırhları, kan rütbeleri ve kesintisiz amansız PvP arenası.</p>
+              <div class="mode-footer">
+                <span class="badge badge-primary">Sezon 1</span>
+                <span style="color: var(--primary);"><i class="fa-solid fa-circle"></i> Çevrimiçi</span>
+              </div>
+            </div>
+
+            <div class="mode-card">
+              <div class="mode-icon"><i class="fa-solid fa-volcano"></i></div>
+              <h3>Devil Mining</h3>
+              <p>Lav ve obsidyen madenleri, yükseltilebilir cehennem kazmaları ve otomatik eritme sistemleri.</p>
+              <div class="mode-footer">
+                <span class="badge badge-primary">Sürüm: 1.16 - 1.21</span>
+                <span style="color: var(--primary);"><i class="fa-solid fa-circle"></i> Çevrimiçi</span>
+              </div>
+            </div>
+
+            <div class="mode-card">
+              <div class="mode-icon"><i class="fa-solid fa-skull"></i></div>
+              <h3>Devil SkyBlock</h3>
+              <p>Adanızı alevlerin üzerinde kurun, şeytani minyonları çalıştırın ve 50.000 TL ödülü kapın.</p>
+              <div class="mode-footer">
+                <span class="badge badge-gold">50.000 ₺ Ödüllü</span>
+                <span style="color: var(--primary);"><i class="fa-solid fa-circle"></i> Çevrimiçi</span>
+              </div>
+            </div>
+
+            <div class="mode-card">
+              <div class="mode-icon"><i class="fa-solid fa-burst"></i></div>
+              <h3>Kristal & KitPvP</h3>
+              <p>Sıfır gecikmeli End Crystal patlatma arenaları, 1v1 düellolar ve lig sistemi.</p>
+              <div class="mode-footer">
+                <span class="badge badge-green">Düşük Ping</span>
+                <span style="color: var(--primary);"><i class="fa-solid fa-circle"></i> Çevrimiçi</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Son Haberler & Duyurular -->
+          <h2 class="section-title">
+            <i class="fa-solid fa-newspaper"></i> Son Haberler & Güncellemeler
+          </h2>
+          <div class="news-grid">
+            
+            <!-- Haber 1 -->
+            <div class="card news-card">
+              <div class="card-body">
+                <div class="news-header-top">
+                  <div class="news-date-badge">
+                    <div class="day">03</div>
+                    <div class="month">Eyl</div>
+                  </div>
+                  <div class="news-title-top">
+                    <h3>DEVILMC SEZON 1 AÇILDI!</h3>
+                    <div class="news-comment-count">
+                      <i class="fa-regular fa-comment"></i> 14 Yorum
+                    </div>
+                  </div>
+                </div>
+                <div class="news-img-box">
+                  <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?w=600&auto=format&fit=crop&q=80" alt="DevilMC Açılış">
+                </div>
+                <div class="news-desc">
+                  Türkiye'nin en agresif Minecraft sunucusu DevilMC kapılarını açtı! 25.000 TL ödüllü BoxPvP turnuvası ve %30 indirim...
+                </div>
+                <div class="news-footer">
+                  <button class="btn btn-primary btn-sm" data-news-id="devil-acilis">Devamını Oku</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Haber 2 -->
+            <div class="card news-card">
+              <div class="card-body">
+                <div class="news-header-top">
+                  <div class="news-date-badge">
+                    <div class="day">28</div>
+                    <div class="month">Ağu</div>
+                  </div>
+                  <div class="news-title-top">
+                    <h3>INFERNO BOXPVP GÜNCELLEMESİ</h3>
+                    <div class="news-comment-count">
+                      <i class="fa-regular fa-comment"></i> 9 Yorum
+                    </div>
+                  </div>
+                </div>
+                <div class="news-img-box">
+                  <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=600&auto=format&fit=crop&q=80" alt="Inferno BoxPvP">
+                </div>
+                <div class="news-desc">
+                  BoxPvP arenasında alevler yükseliyor! Yeni cehennem çukuru zindanı, kan zırhları ve boss savaşları aktif...
+                </div>
+                <div class="news-footer">
+                  <button class="btn btn-primary btn-sm" data-news-id="inferno-boxpvp">Devamını Oku</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Haber 3 -->
+            <div class="card news-card">
+              <div class="card-body">
+                <div class="news-header-top">
+                  <div class="news-date-badge">
+                    <div class="day">15</div>
+                    <div class="month">Ağu</div>
+                  </div>
+                  <div class="news-title-top">
+                    <h3>DEVIL SKYBLOCK SEZON 2</h3>
+                    <div class="news-comment-count">
+                      <i class="fa-regular fa-comment"></i> 5 Yorum
+                    </div>
+                  </div>
+                </div>
+                <div class="news-img-box">
+                  <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=600&auto=format&fit=crop&q=80" alt="SkyBlock">
+                </div>
+                <div class="news-desc">
+                  Devil SkyBlock Sezon 2 devasa ödül havuzuyla yayında! Şeytani minyonlar ve ejderha madeni sizleri bekliyor.
+                </div>
+                <div class="news-footer">
+                  <button class="btn btn-primary btn-sm" data-news-id="devil-skyblock">Devamını Oku</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Haber 4 -->
+            <div class="card news-card">
+              <div class="card-body">
+                <div class="news-header-top">
+                  <div class="news-date-badge">
+                    <div class="day">01</div>
+                    <div class="month">Ağu</div>
+                  </div>
+                  <div class="news-title-top">
+                    <h3>1V1 KRİSTAL TURNUVASI</h3>
+                    <div class="news-comment-count">
+                      <i class="fa-regular fa-comment"></i> 18 Yorum
+                    </div>
+                  </div>
+                </div>
+                <div class="news-img-box">
+                  <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&auto=format&fit=crop&q=80" alt="Turnuva">
+                </div>
+                <div class="news-desc">
+                  Pazar günü 20:00'da büyük 1v1 PvP turnuvası gerçekleşecek! 1.'ye SPONSOR VIP ve 500 Kredi hediye edilecektir.
+                </div>
+                <div class="news-footer">
+                  <button class="btn btn-primary btn-sm" data-news-id="turnuva-duyuru">Devamını Oku</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SAĞ SIDEBAR (Sıralamalar & Canlı Listeler) -->
+        <div class="col-4">
+          <div class="sidebar-section">
+            
+            <!-- Discord Katıl Widget -->
+            <div class="card" style="background: linear-gradient(135deg, rgba(255, 42, 75, 0.15) 0%, var(--card-bg) 100%); border-color: rgba(255, 42, 75, 0.4);">
+              <div class="card-body text-center" style="padding: 26px;">
+                <i class="fa-brands fa-discord" style="font-size: 3rem; color: var(--primary); margin-bottom: 12px; filter: drop-shadow(0 0 10px var(--primary-glow));"></i>
+                <h3 style="margin-bottom: 6px;">DevilMC Topluluğu</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">Tüm sipariş ve başvurular Discord sunucumuza anlık bildirim olarak düşmektedir!</p>
+                <a href="https://discord.gg/hHqH8RCpxF" target="_blank" class="btn btn-primary btn-block">
+                  <i class="fa-brands fa-discord"></i> Hemen Katıl
+                </a>
+              </div>
+            </div>
+
+            <!-- En Çok Kredi Yükleyenler -->
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-crown" style="color: var(--accent-gold);"></i> En Çok Kredi Yükleyenler</h3>
+                <span class="badge badge-primary">Bu Ay</span>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Kullanıcı Adı</th>
+                      <th class="text-end">Toplam</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/InfernoKing/32.png" alt="InfernoKing" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">InfernoKing</span>
+                        </div>
+                      </td>
+                      <td class="text-end"><span class="amount-badge">850 ₺</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/DevilSlayer/32.png" alt="DevilSlayer" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">DevilSlayer</span>
+                        </div>
+                      </td>
+                      <td class="text-end"><span class="amount-badge">750 ₺</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/BloodReaper/32.png" alt="BloodReaper" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">BloodReaper</span>
+                        </div>
+                      </td>
+                      <td class="text-end"><span class="amount-badge">650 ₺</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/ShadowHunter/32.png" alt="ShadowHunter" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">ShadowHunter</span>
+                        </div>
+                      </td>
+                      <td class="text-end"><span class="amount-badge">500 ₺</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Son Kredi Yükleyenler -->
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-clock-rotate-left"></i> Son Kredi Yükleyenler</h3>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Kullanıcı Adı</th>
+                      <th class="text-end">Miktar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/RedDemon/32.png" alt="RedDemon" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">RedDemon</span>
+                        </div>
+                      </td>
+                      <td class="text-end"><span class="amount-badge">250 ₺</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/FireBringer/32.png" alt="FireBringer" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">FireBringer</span>
+                        </div>
+                      </td>
+                      <td class="text-end"><span class="amount-badge">100 ₺</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/ViperX/32.png" alt="ViperX" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">ViperX</span>
+                        </div>
+                      </td>
+                      <td class="text-end"><span class="amount-badge">50 ₺</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- Son Mağaza Alışverişleri -->
+            <div class="card">
+              <div class="card-header">
+                <h3><i class="fa-solid fa-bag-shopping"></i> Son Alışverişler (Discord Loglu)</h3>
+              </div>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Kullanıcı</th>
+                      <th class="text-center">Kategori</th>
+                      <th class="text-end">Ürün</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/InfernoKing/32.png" alt="InfernoKing" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">InfernoKing</span>
+                        </div>
+                      </td>
+                      <td class="text-center"><span class="badge badge-primary">VIP</span></td>
+                      <td class="text-end"><span style="color: var(--text-muted); font-size: 0.82rem;">DEVIL-VIP+</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/BloodReaper/32.png" alt="BloodReaper" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">BloodReaper</span>
+                        </div>
+                      </td>
+                      <td class="text-center"><span class="badge badge-gold">VIP</span></td>
+                      <td class="text-end"><span style="color: var(--text-muted); font-size: 0.82rem;">INFERNO VIP</span></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="player-cell">
+                          <img class="player-avatar-sm" src="https://minotar.net/helm/RedDemon/32.png" alt="RedDemon" onerror="this.src='https://minotar.net/helm/Steve/32.png'">
+                          <span class="player-name">RedDemon</span>
+                        </div>
+                      </td>
+                      <td class="text-center"><span class="badge badge-purple">Kasa</span></td>
+                      <td class="text-end"><span style="color: var(--text-muted); font-size: 0.82rem;">Şeytan Kasası</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Haber Okuyucu Modalı -->
+  <div class="modal-overlay" id="news-modal">
+    <div class="modal-box" style="max-width: 650px;">
+      <div class="modal-header">
+        <div>
+          <h3 id="news-modal-title" style="margin-bottom: 2px;">Haber Başlığı</h3>
+          <span id="news-modal-date" style="font-size: 0.8rem; color: var(--text-muted);">Tarih</span>
+        </div>
+        <button class="modal-close" id="news-modal-close">&times;</button>
+      </div>
+      <div class="modal-body" id="news-modal-body" style="line-height: 1.8; color: var(--text-main);">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline btn-sm" onclick="document.getElementById('news-modal').classList.remove('active')">Kapat</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giriş Yap & Minecraft Skin Modalı -->
+  <div class="modal-overlay" id="auth-modal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-right-to-bracket" style="color: var(--primary);"></i> Hesaba Giriş Yap</h3>
+        <button class="modal-close" id="auth-modal-close">&times;</button>
+      </div>
+      <form id="auth-form">
+        <div class="modal-body text-center">
+          <div style="display: inline-block; margin-bottom: 16px; border: 2px solid var(--border-color); border-radius: var(--radius-md); padding: 8px; background: var(--dark-bg);">
+            <img id="modal-skin-preview" src="https://minotar.net/helm/Steve/64.png" alt="Skin Preview" style="width: 64px; height: 64px; image-rendering: pixelated; margin: 0 auto;">
+          </div>
+          <div class="form-group text-start">
+            <label class="form-label" for="auth-username">Minecraft Kullanıcı Adınız</label>
+            <input type="text" id="auth-username" class="form-control" placeholder="Örn: DevilWarrior" required autocomplete="off">
+            <small style="color: var(--text-dim); font-size: 0.78rem; display: block; margin-top: 4px;">Kullanıcı adınızı girdikçe karakter kafanız otomatik yüklenecektir.</small>
+          </div>
+          <div class="form-group text-start">
+            <label class="form-label" for="auth-password">Şifreniz</label>
+            <input type="password" id="auth-password" class="form-control" placeholder="••••••••" required>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('auth-modal').classList.remove('active')">Vazgeç</button>
+          <button type="submit" class="btn btn-primary"><i class="fa-solid fa-arrow-right-to-bracket"></i> Giriş Yap</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer-line-accent"></div>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-widget">
+          <h4>DevilMC Network</h4>
+          <p>
+            Türkiye'nin en rekabetçi ve güçlü Minecraft altyapısına sahip <strong>DevilMC Network</strong>, oyunculara benzersiz bir PvP ve BoxMining deneyimi sunar.
+            <br><br>
+            İletişim: <span style="color: var(--primary);">destek@devilmc.com.tr</span>
+          </p>
+        </div>
+
+        <div class="footer-widget">
+          <h4>Hızlı Menü</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Ana Sayfa</a></li>
+            <li><a href="store.html"><i class="fa-solid fa-angle-right"></i> Mağaza</a></li>
+            <li><a href="credits.html"><i class="fa-solid fa-angle-right"></i> Kredi Yükle</a></li>
+            <li><a href="leaderboard.html"><i class="fa-solid fa-angle-right"></i> Sıralama</a></li>
+            <li><a href="rules.html"><i class="fa-solid fa-angle-right"></i> Kurallar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-widget">
+          <h4>Oyun Modları</h4>
+          <ul class="footer-links">
+            <li><a href="store.html"><i class="fa-solid fa-angle-right"></i> Inferno BoxPvP</a></li>
+            <li><a href="store.html"><i class="fa-solid fa-angle-right"></i> Devil Mining</a></li>
+            <li><a href="store.html"><i class="fa-solid fa-angle-right"></i> Devil SkyBlock</a></li>
+            <li><a href="store.html"><i class="fa-solid fa-angle-right"></i> Kristal & KitPvP</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-widget">
+          <h4>Sosyal Medya</h4>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/hHqH8RCpxF" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a></li>
+            <li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+            <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+            <li><a href="#" target="_blank"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 <strong>DevilMC Network</strong>. Tüm hakları saklıdır. Minecraft, Mojang AB'nin tescilli ticari markasıdır.
+        </div>
+        <div>
+          Sunucu IP: <code style="color: var(--primary); background: rgba(255,42,75,0.12); padding: 2px 6px; border-radius: 4px;">play.devilmc.com.tr</code>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
